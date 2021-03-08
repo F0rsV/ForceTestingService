@@ -9,3 +9,4 @@ namespace ForceTestingService.Infrastructure.Entities
         public ICollection<Topic> Topics { get; set; }
     }
 }
+

@@ -40,7 +40,6 @@ namespace ForceTestingService.Infrastructure.Repositories
             if (filter != null)
             {
                 query = query.Where(filter);
-
             }
 
 
