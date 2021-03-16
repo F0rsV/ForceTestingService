@@ -3,11 +3,11 @@ using ForceTestingService.Infrastructure.Entities;
 
 namespace ForceTestingService.ApplicationCore.Mappers
 {
-    public class TestMapper: GenericMapper<Test, TestDto>
+    public class TestBaseMapper : GenericMapper<TestBase, TestBaseDto>
     {
-        public override Test Map(TestDto dto)
+        public override TestBase Map(TestBaseDto dto)
         {
-            return new Test()
+            return new TestBase()
             {
                 Id = dto.Id,
                 Name = dto.Name,
@@ -18,9 +18,9 @@ namespace ForceTestingService.ApplicationCore.Mappers
             };
         }
 
-        public override TestDto Map(Test entity)
+        public override TestBaseDto Map(TestBase entity)
         {
-            return new TestDto()
+            return new TestBaseDto()
             {
                 Id = entity.Id,
                 Name = entity.Name,

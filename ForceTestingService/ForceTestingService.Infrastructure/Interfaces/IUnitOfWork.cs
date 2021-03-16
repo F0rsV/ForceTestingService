@@ -8,7 +8,7 @@ namespace ForceTestingService.Infrastructure.Interfaces
         IRepository<Answer> AnswerRepository { get; }
         IRepository<Question> QuestionRepository { get; }
         IRepository<Subject> SubjectRepository { get; }
-        IRepository<Test> TestRepository { get; }
+        IRepository<TestBase> TestBaseRepository { get; }
         IRepository<Topic> TopicRepository { get; }
         IRepository<User> UserRepository { get; }
 
