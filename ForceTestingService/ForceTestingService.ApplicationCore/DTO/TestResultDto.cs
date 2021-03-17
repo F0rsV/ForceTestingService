@@ -8,6 +8,7 @@ namespace ForceTestingService.ApplicationCore.DTO
         public float Score { get; set; }
         public DateTime Date { get; set; }
 
+        public int TestBaseId { get; set; }
         public int StudentUserId { get; set; }
     }
 }

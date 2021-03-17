@@ -12,6 +12,7 @@ namespace ForceTestingService.ApplicationCore.Mappers
                 Id = dto.Id,
                 Score = dto.Score,
                 Date = dto.Date,
+                TestBaseId = dto.TestBaseId,
                 StudentUserId = dto.StudentUserId
             };
         }
@@ -23,6 +24,7 @@ namespace ForceTestingService.ApplicationCore.Mappers
                 Id = entity.Id,
                 Score = entity.Score,
                 Date = entity.Date,
+                TestBaseId = entity.TestBaseId,
                 StudentUserId = entity.StudentUserId
             };
         }
