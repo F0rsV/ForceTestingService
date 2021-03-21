@@ -10,6 +10,7 @@ namespace ForceTestingService.Infrastructure.Context
         public DbSet<Question> Questions { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<TestBase> TestBases { get; set; }
+        public DbSet<TestResult> TestResults { get; set; }
         public DbSet<Topic> Topics { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

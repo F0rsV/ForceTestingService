@@ -23,6 +23,9 @@ namespace ForceTestingService.Infrastructure.UnitOfWork
         private IRepository<TestBase> _testBaseRepository;
         public IRepository<TestBase> TestBaseRepository => _testBaseRepository ??= new GenericRepository<TestBase>(_context);
 
+        private IRepository<TestResult> _testResultRepository;
+        public IRepository<TestResult> TestResultRepository => _testResultRepository ??= new GenericRepository<TestResult>(_context);
+
         private IRepository<Topic> _topicRepository;
         public IRepository<Topic> TopicRepository => _topicRepository ??= new GenericRepository<Topic>(_context);
 
