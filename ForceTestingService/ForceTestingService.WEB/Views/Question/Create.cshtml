@@ -1,0 +1,19 @@
+﻿@model ForceTestingService.ApplicationCore.DTO.QuestionDto
+
+<h2>Create new Question for topic "@ViewBag.Topic.Name"</h2>
+<form method="post" asp-controller="Question" asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <input asp-for="TopicId" type="hidden" value="@ViewBag.Topic.Id"/>
+        <input asp-for="TopicName" type="hidden" value="@ViewBag.Topic.Name"/>
+    </div>
+    <div>
+        <label asp-for="TaskInfo"></label><br />
+        <input asp-for="TaskInfo" />
+        <span asp-validation-for="TaskInfo"></span>
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+</form>
+

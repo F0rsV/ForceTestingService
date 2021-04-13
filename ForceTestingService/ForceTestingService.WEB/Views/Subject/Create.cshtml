@@ -1,0 +1,14 @@
+﻿@model ForceTestingService.ApplicationCore.DTO.SubjectDto
+
+<h2>Create new Subject</h2>
+<form method="post" asp-controller="Subject" asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+</form>

@@ -1,0 +1,49 @@
+﻿@using System.Linq
+@model ForceTestingService.ApplicationCore.Models.CraftedTest
+
+<h1>Test</h1>
+
+<form method="post" asp-controller="StudentTest" asp-action="PassTest">
+    <div>
+        <input asp-for="Date" type="hidden" value="@Model.Date" />
+        <input asp-for="Score" type="hidden" value="@Model.Score" />
+        <input asp-for="TestBaseDto.NumOfQuestions" type="hidden" value="@Model.TestBaseDto.NumOfQuestions" />
+        <input asp-for="TestBaseDto.TopicId" type="hidden" value="@Model.TestBaseDto.TopicId" />
+        <input asp-for="TestBaseDto.Id" type="hidden" value="@Model.TestBaseDto.Id" />
+        <input asp-for="TestBaseDto.TopicName" type="hidden" value="@Model.TestBaseDto.TopicName" />
+        <input asp-for="TestBaseDto.AmountOfSeconds" type="hidden" value="@Model.TestBaseDto.AmountOfSeconds" />
+        <input asp-for="TestBaseDto.NumOfTries" type="hidden" value="@Model.TestBaseDto.NumOfTries" />
+        <input asp-for="TestBaseDto.Name" type="hidden" value="@Model.TestBaseDto.Name" />
+    </div>
+    
+    <div>
+        <div class="question">
+            @for (int i = 0; i < Model.Questions.Count(); i++)
+            {
+                <input name="questions[@i].TopicId" type="hidden" value="@Model.Questions.ElementAt(i).TopicId" />
+                <input name="questions[@i].TaskInfo" type="hidden" value="@Model.Questions.ElementAt(i).TaskInfo" />
+                <input name="questions[@i].TopicName" type="hidden" value="@Model.Questions.ElementAt(i).TopicName" />
+                <input name="questions[@i].Id" type="hidden" value="@Model.Questions.ElementAt(i).Id" />
+
+                @Model.Questions.ElementAt(i).TaskInfo
+                <br />
+
+                for (int j = 0; j < @Model.Questions.ElementAt(i).Answers.Count; j++)
+                {
+                    <input name="questions[@i].Answers[@j].Id" type="hidden" value="@Model.Questions.ElementAt(i).Answers.ElementAt(j).Id" />
+                    <input name="questions[@i].Answers[@j].QuestionId" type="hidden" value="@Model.Questions.ElementAt(i).Answers.ElementAt(j).QuestionId" />
+                    <input name="questions[@i].Answers[@j].Text" type="hidden" value="@Model.Questions.ElementAt(i).Answers.ElementAt(j).Text" />
+
+                    <input type="checkbox" name="questions[@i].Answers[@j].IsCorrect" value="true"/>
+                    @Model.Questions.ElementAt(i).Answers.ElementAt(j).Text<br />
+                }
+            }
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Submit Test" />
+    </div>
+</form>
+
+

@@ -1,0 +1,37 @@
+﻿@model ForceTestingService.ApplicationCore.DTO.TestBaseDto
+
+<h2>Edit Test</h2>
+<form method="post" asp-controller="TestBase" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TopicId" class="control-label">Subject</label>
+        <select asp-for="TopicId" class="form-control" asp-items="ViewBag.TopicId"></select>
+    </div>
+    <div>
+        <label asp-for="NumOfQuestions"></label><br />
+        <input asp-for="NumOfQuestions" />
+        <span asp-validation-for="NumOfQuestions"></span>
+    </div>
+    <div>
+        <label asp-for="AmountOfSeconds"></label><br />
+        <input asp-for="AmountOfSeconds" />
+        <span asp-validation-for="AmountOfSeconds"></span>
+    </div>
+    <div>
+        <label asp-for="NumOfTries"></label><br />
+        <input asp-for="NumOfTries" />
+        <span asp-validation-for="NumOfTries"></span>
+    </div>
+    <div>
+        <input type="submit" value="Edit" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

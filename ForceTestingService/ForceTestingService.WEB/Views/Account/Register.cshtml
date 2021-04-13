@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model ForceTestingService.WEB.ViewModels.RegisterViewModel
+<h2>Register new user</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="FirstName"></label><br />
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label><br />
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="PasswordConfirm"></label><br />
+        <input asp-for="PasswordConfirm" />
+        <span asp-validation-for="PasswordConfirm"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserRole"></label><br />
+        @foreach (var role in Model.AllRoles)
+        {
+            @Html.RadioButtonFor(model => model.UserRole, role)
+            @role<br/>
+        }
+        <span asp-validation-for="UserRole"></span>
+    </div>
+    <div>
+        <input type="submit" value="Register" />
+    </div>
+</form>

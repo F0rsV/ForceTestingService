@@ -1,0 +1,35 @@
+﻿@using System.Runtime.InteropServices
+@model IEnumerable<ForceTestingService.ApplicationCore.DTO.AnswerDto>
+
+<h1>Answers for question:"@ViewBag.Question.TaskInfo"</h1>
+
+<p>
+    <a asp-action="Create" asp-route-questionId="@ViewBag.Question.Id">Create and add new Answer for this question</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <p>Answers</p>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr @Html.Raw(!item.IsCorrect?"":"class='bg-success'") >
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" asp-route-questionId="@ViewBag.Question.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" asp-route-questionId="@ViewBag.Question.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Index" asp-controller="Question" asp-route-topicid="@ViewBag.Question.TopicId">Go back</a>
+</p>

@@ -2,7 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@User.Identity.Name</p>
+
+    @if (User.IsInRole("teacher"))
+    {
+        <a asp-controller="Subject" asp-action="Index">Subjects Manager</a>
+        <br />
+        <a asp-controller="Topic" asp-action="Index">Topics Manager</a>
+        <br />
+        <a asp-controller="TestBase" asp-action="Index">Test Manager</a>
+    }
+    else if (User.IsInRole("student"))
+    {
+        <a asp-controller="StudentTest" asp-action="Index">Tests Main Menu</a>
+    }
+
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Log out" />
+    </form>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Login</a>
+    <a asp-controller="Account" asp-action="Register">Register</a>
+}

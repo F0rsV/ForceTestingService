@@ -1,0 +1,23 @@
+﻿@model ForceTestingService.ApplicationCore.DTO.AnswerDto
+
+<h1>Delete Answer</h1>
+
+<h3>Are you sure you want to delete answer for this question?</h3>
+<h4>"@ViewBag.Question.TaskInfo"</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" asp-route-questionId="@ViewBag.Question.Id">Back to List</a>
+    </form>
+</div>

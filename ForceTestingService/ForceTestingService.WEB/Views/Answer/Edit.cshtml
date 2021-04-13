@@ -1,0 +1,26 @@
+﻿@model ForceTestingService.ApplicationCore.DTO.AnswerDto
+
+<h2>Edit Answer of this question:</h2>
+<h3>@ViewBag.Question.TaskInfo</h3>
+<form method="post" asp-controller="Answer" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <input asp-for="QuestionId" type="hidden" value="@ViewBag.Question.Id"/>
+    </div>
+    <div>
+        <label asp-for="Text"></label><br />
+        <input asp-for="Text" />
+        <span asp-validation-for="Text"></span>
+    </div>
+    <div>
+        <label asp-for="IsCorrect"></label>
+        <input asp-for="IsCorrect" />
+    </div>
+    <div>
+        <input type="submit" value="Edit" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" asp-route-questionId="@ViewBag.Question.Id">Back to List</a>
+</div>

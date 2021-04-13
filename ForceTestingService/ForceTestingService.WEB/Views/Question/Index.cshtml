@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ForceTestingService.ApplicationCore.DTO.QuestionDto>
+
+<h1>Question Manager for Topic "@ViewBag.Topic.Name"</h1>
+
+<p>
+    <a asp-action="Create" asp-route-topicId="@ViewBag.Topic.Id">Create and add new Question to topic</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <p>Questions Task Info</p>
+        </th>
+        <th>
+            <p>Num of answers</p>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answers.Count)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" asp-route-topicId="@ViewBag.Topic.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" asp-route-topicId="@ViewBag.Topic.Id">Delete</a> |
+                <a asp-action="Index" asp-controller="Answer" asp-route-questionid="@item.Id">Manage Answers</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<p>
+    <a asp-controller="Topic" asp-action="Index">Go back</a>
+</p>

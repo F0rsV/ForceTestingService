@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ForceTestingService.ApplicationCore.DTO.TestResultDto>
+
+<h1>Results for selected test:</h1>
+
+<p>
+    <a asp-action="GetTests">Go back</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
