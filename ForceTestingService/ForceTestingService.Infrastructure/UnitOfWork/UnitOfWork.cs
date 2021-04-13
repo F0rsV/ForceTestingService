@@ -7,7 +7,7 @@ using ForceTestingService.Infrastructure.Repositories;
 
 namespace ForceTestingService.Infrastructure.UnitOfWork
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly ApplicationDbContext _context;
 
