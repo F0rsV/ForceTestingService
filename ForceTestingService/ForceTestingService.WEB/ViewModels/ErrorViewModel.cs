@@ -1,6 +1,4 @@
-using System;
-
-namespace ForceTestingService.WEB.Models
+namespace ForceTestingService.WEB.ViewModels
 {
     public class ErrorViewModel
     {
