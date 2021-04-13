@@ -10,5 +10,6 @@ namespace ForceTestingService.ApplicationCore.DTO
 
         public int TestBaseId { get; set; }
         public int StudentUserId { get; set; }
+        public string StudentFullName { get; set; }
     }
 }
