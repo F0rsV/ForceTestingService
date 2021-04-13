@@ -2,8 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ForceTestingService.ApplicationCore.Interfaces;
+using ForceTestingService.ApplicationCore.Services;
+using ForceTestingService.ApplicationCore.Utils;
 using ForceTestingService.Infrastructure.Context;
 using ForceTestingService.Infrastructure.Entities;
+using ForceTestingService.Infrastructure.Interfaces;
+using ForceTestingService.Infrastructure.Repositories;
+using ForceTestingService.Infrastructure.UnitOfWork;
+using ForceTestingService.Infrastructure.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,12 +34,8 @@ namespace ForceTestingService.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            services.RegisterDalServices(Configuration.GetConnectionString("DefaultConnection"));
+            services.RegisterBllServices();
             services.AddControllersWithViews();
         }
 
