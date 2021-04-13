@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ForceTestingService.WEB.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ForceTestingService.WEB.Models;
 
 namespace ForceTestingService.WEB.Controllers
 {
