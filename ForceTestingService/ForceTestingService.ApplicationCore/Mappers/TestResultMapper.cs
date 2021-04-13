@@ -25,7 +25,8 @@ namespace ForceTestingService.ApplicationCore.Mappers
                 Score = entity.Score,
                 Date = entity.Date,
                 TestBaseId = entity.TestBaseId,
-                StudentUserId = entity.StudentUserId
+                StudentUserId = entity.StudentUserId,
+                StudentFullName = entity.StudentUser.LastName + " " + entity.StudentUser.FirstName
             };
         }
     }

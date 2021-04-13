@@ -27,7 +27,8 @@ namespace ForceTestingService.ApplicationCore.Mappers
                 NumOfQuestions = entity.NumOfQuestions,
                 AmountOfSeconds = entity.AmountOfSeconds,
                 NumOfTries = entity.NumOfTries,
-                TopicId = entity.TopicId
+                TopicId = entity.TopicId,
+                TopicName = entity.Topic.Name
             };
         }
     }

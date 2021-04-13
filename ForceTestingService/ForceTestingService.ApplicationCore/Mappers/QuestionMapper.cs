@@ -13,7 +13,6 @@ namespace ForceTestingService.ApplicationCore.Mappers
             {
                 Id = dto.Id,
                 TaskInfo = dto.TaskInfo,
-                Answers = dto.Answers.Select(answerDto => _answerMapper.Map(answerDto)).ToList(),
                 TopicId = dto.TopicId
             };
         }
@@ -24,8 +23,8 @@ namespace ForceTestingService.ApplicationCore.Mappers
             {
                 Id = entity.Id,
                 TaskInfo = entity.TaskInfo,
-                Answers = entity.Answers.Select(answerEntity => _answerMapper.Map(answerEntity)).ToList(),
-                TopicId = entity.TopicId
+                TopicId = entity.TopicId,
+                TopicName = entity.Topic.Name
             };
         }
     }
