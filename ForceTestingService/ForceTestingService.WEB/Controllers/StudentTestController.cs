@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ForceTestingService.WEB.Controllers
 {
-    [Authorize(Roles = "student")]
+//    [Authorize(Roles = "student")]
     public class StudentTestController : Controller
     {
         private readonly UserManager<User> _userManager;

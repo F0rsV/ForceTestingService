@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ForceTestingService.WEB.Controllers
 {
-    [Authorize(Roles = "teacher")]
+//    [Authorize(Roles = "teacher")]
     public class TestBaseController : Controller
     {
         private readonly ITestBaseService _testBaseService;

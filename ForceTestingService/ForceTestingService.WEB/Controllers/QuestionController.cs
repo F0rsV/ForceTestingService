@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ForceTestingService.WEB.Controllers
 {
-    [Authorize(Roles = "teacher")]
+//    [Authorize(Roles = "teacher")]
     public class QuestionController : Controller
     {
         private readonly IQuestionService _questionService;

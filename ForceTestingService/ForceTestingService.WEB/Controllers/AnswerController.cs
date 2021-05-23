@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ForceTestingService.WEB.Controllers
 {
-    [Authorize(Roles = "teacher")]
+//    [Authorize(Roles = "teacher")]
     public class AnswerController : Controller
     {
         private readonly IAnswerService _answerService;
@@ -43,6 +43,9 @@ namespace ForceTestingService.WEB.Controllers
                 await _answerService.CreateAnswerAsync(answerDto);
                 return RedirectToAction("Index", new { questionId = answerDto.QuestionId });
             }
+
+            var question = await _questionService.GetQuestionByIdAsync(answerDto.QuestionId);
+            ViewBag.Question = question;
             return View(answerDto);
         }
 
