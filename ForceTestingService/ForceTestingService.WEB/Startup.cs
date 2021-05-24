@@ -34,7 +34,15 @@ namespace ForceTestingService.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.RegisterDalServices(Configuration.GetConnectionString("DescConnection")); // DefaultConnection
+            var server = Configuration["DbServer"] ?? "localhost";
+            var port = Configuration["DbPort"] ?? "1433";
+            var user = Configuration["DbUser"] ?? "sa"; //TODO
+            var password = Configuration["DbPassword"] ?? "Pa55w0rd2021"; //TODO
+            var dataBase = Configuration["Database"] ?? "ForceTestingServiceDb";
+            var connectionString = $"Server={server},{port};Initial Catalog={dataBase};User ID={user};Password={password}";
+
+            services.RegisterDalServices(connectionString);
+
             services.RegisterBllServices();
             services.AddControllersWithViews();
         }
