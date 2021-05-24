@@ -1,8 +1,23 @@
 version: '3.4'
+services: 
+    ms-sql-server:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        environment: 
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "Pa55w0rd2021"
+            MSSQL_PID: Express
+        ports: 
+            - "1433:1433"
+    force-testing-service:
+        build:
+            dockerfile: ForceTestingService.WEB/Dockerfile
+            context: .
+        environment: 
+            DbServer: ms-sql-server
+            DbPort: "1433"
+            DbUser: "sa"
+            DbPassword: "Pa55w0rd2021"
+            Database: "ForceTestingServiceDb"
+        ports: 
+            - "8080:80"
 
-services:
-  forcetestingservice.web:
-    image: ${DOCKER_REGISTRY-}forcetestingserviceweb
-    build:
-      context: .
-      dockerfile: ForceTestingService.WEB/Dockerfile
