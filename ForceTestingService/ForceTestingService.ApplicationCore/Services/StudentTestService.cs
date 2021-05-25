@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 using ForceTestingService.ApplicationCore.DTO;
@@ -11,7 +9,6 @@ using ForceTestingService.ApplicationCore.Models;
 using ForceTestingService.ApplicationCore.Utils;
 using ForceTestingService.Infrastructure.Entities;
 using ForceTestingService.Infrastructure.Interfaces;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ForceTestingService.ApplicationCore.Services
 {

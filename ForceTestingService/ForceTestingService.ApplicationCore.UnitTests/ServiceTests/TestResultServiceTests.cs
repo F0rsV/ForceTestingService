@@ -5,7 +5,6 @@ using ForceTestingService.ApplicationCore.Interfaces;
 using ForceTestingService.ApplicationCore.Services;
 using ForceTestingService.Infrastructure.Context;
 using ForceTestingService.Infrastructure.UnitOfWork;
-using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
 namespace ForceTestingService.ApplicationCore.UnitTests.ServiceTests

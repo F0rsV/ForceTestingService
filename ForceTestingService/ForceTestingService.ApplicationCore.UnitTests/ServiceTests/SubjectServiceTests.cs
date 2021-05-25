@@ -44,7 +44,7 @@ namespace ForceTestingService.ApplicationCore.UnitTests.ServiceTests
         public void GetSubjectByIdAsync_ItemDoesNotExist_ThrowsException()
         {
             Func<Task> act = async () => await _service.GetSubjectByIdAsync(228);
-            act.Should().Throw<Exception>(); //TODO Exceptions
+            act.Should().Throw<Exception>();
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace ForceTestingService.ApplicationCore.UnitTests.ServiceTests
         public void DeleteSubjectByIdAsync_ItemDoesNotExist_ThrowsException()
         {
             Func<Task> act = async () => await _service.DeleteSubjectByIdAsync(228);
-            act.Should().Throw<Exception>(); //TODO Exceptions
+            act.Should().Throw<Exception>();
         }
 
         [Test]

@@ -34,7 +34,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var topicEntityToGet = await _unitOfWork.TopicRepository.GetByIdAsync(topicId);
             if (topicEntityToGet == null)
-                throw new Exception("No topic with this ID was found"); //TODO Exceptions
+                throw new Exception("No topic with this ID was found");
 
             topicEntityToGet.Subject = await _unitOfWork.SubjectRepository.GetByIdAsync(topicEntityToGet.SubjectId);
 
@@ -64,7 +64,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var topicEntityToDelete = await _unitOfWork.TopicRepository.GetByIdAsync(topicId);
             if (topicEntityToDelete == null)
-                throw new Exception("No Topic with this ID was found"); //TODO Exceptions
+                throw new Exception("No Topic with this ID was found");
 
             _unitOfWork.TopicRepository.Delete(topicEntityToDelete);
             await _unitOfWork.CommitAsync();

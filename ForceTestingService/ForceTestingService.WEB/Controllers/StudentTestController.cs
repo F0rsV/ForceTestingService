@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ForceTestingService.ApplicationCore.Interfaces;
 using ForceTestingService.ApplicationCore.Models;
 using ForceTestingService.Infrastructure.Entities;
-using ForceTestingService.WEB.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForceTestingService.WEB.Controllers
 {
-//    [Authorize(Roles = "student")]
+    [Authorize(Roles = "student")]
     public class StudentTestController : Controller
     {
         private readonly UserManager<User> _userManager;

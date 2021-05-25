@@ -31,7 +31,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var testBaseEntityToGet = await _unitOfWork.TestBaseRepository.GetByIdAsync(testBaseId);
             if (testBaseEntityToGet == null)
-                throw new Exception("No TestBase with this Id was found"); //TODO Exceptions
+                throw new Exception("No TestBase with this Id was found");
 
             testBaseEntityToGet.Topic = await _unitOfWork.TopicRepository.GetByIdAsync(testBaseEntityToGet.TopicId);
 
@@ -57,7 +57,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var testBaseEntityToDelete = await _unitOfWork.TestBaseRepository.GetByIdAsync(testBaseId);
             if (testBaseEntityToDelete == null)
-                throw new Exception("No TestBase with this ID was found"); //TODO Exceptions
+                throw new Exception("No TestBase with this ID was found");
 
             _unitOfWork.TestBaseRepository.Delete(testBaseEntityToDelete);
             await _unitOfWork.CommitAsync();

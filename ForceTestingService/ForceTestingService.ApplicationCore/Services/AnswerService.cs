@@ -32,7 +32,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var answerEntityToGet = await _unitOfWork.AnswerRepository.GetByIdAsync(answerId);
             if (answerEntityToGet == null)
-                throw new Exception("No answer with this ID was found"); //TODO Exceptions
+                throw new Exception("No answer with this ID was found");
 
             answerEntityToGet.Question = await _unitOfWork.QuestionRepository.GetByIdAsync(answerEntityToGet.QuestionId);
 
@@ -58,7 +58,7 @@ namespace ForceTestingService.ApplicationCore.Services
         {
             var answerEntityToDelete = await _unitOfWork.AnswerRepository.GetByIdAsync(answerId);
             if (answerEntityToDelete == null)
-                throw new Exception("No answer with this ID was found"); //TODO Exceptions
+                throw new Exception("No answer with this ID was found");
 
             _unitOfWork.AnswerRepository.Delete(answerEntityToDelete);
             await _unitOfWork.CommitAsync();

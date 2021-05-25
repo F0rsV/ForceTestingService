@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ForceTestingService.ApplicationCore.DTO;
 using ForceTestingService.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ForceTestingService.WEB.Controllers
 {
-//    [Authorize(Roles = "teacher")]
+    [Authorize(Roles = "teacher")]
     public class QuestionController : Controller
     {
         private readonly IQuestionService _questionService;

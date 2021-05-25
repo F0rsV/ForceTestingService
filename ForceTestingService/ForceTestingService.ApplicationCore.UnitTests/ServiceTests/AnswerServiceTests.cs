@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
@@ -44,7 +43,7 @@ namespace ForceTestingService.ApplicationCore.UnitTests.ServiceTests
         public void GetAnswerByIdAsync_ItemDoesNotExist_ThrowsException()
         {
             Func<Task> act = async () => await _service.GetAnswerByIdAsync(228);
-            act.Should().Throw<Exception>(); //TODO Exceptions
+            act.Should().Throw<Exception>();
         }
 
         [Test]
@@ -76,7 +75,7 @@ namespace ForceTestingService.ApplicationCore.UnitTests.ServiceTests
         public void DeleteAnswerByIdAsync_ItemDoesNotExist_ThrowsException()
         {
             Func<Task> act = async () => await _service.DeleteAnswerByIdAsync(228);
-            act.Should().Throw<Exception>(); //TODO Exceptions
+            act.Should().Throw<Exception>();
         }
 
         [Test]

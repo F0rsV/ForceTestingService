@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ForceTestingService.ApplicationCore.DTO;
 using ForceTestingService.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -10,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ForceTestingService.WEB.Controllers
 {
-//    [Authorize(Roles = "teacher")]
+    [Authorize(Roles = "teacher")]
     public class TopicController : Controller
     {
         private readonly ITopicService _topicService;
