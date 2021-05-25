@@ -13,7 +13,7 @@ services:
             dockerfile: ForceTestingService.WEB/Dockerfile
             context: .
         environment: 
-            DbServer: ms-sql-server
+            DbServer: tcp:ms-sql-server
             DbPort: "1433"
             DbUser: "sa"
             DbPassword: "Pa55w0rd2021"
