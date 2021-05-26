@@ -27,6 +27,7 @@ namespace ForceTestingService.WEB
             var dataBase = Configuration["Database"];
             var connectionString = $"Server={server},{port};Initial Catalog={dataBase};User ID={user};Password={password}";
 
+            //services.RegisterDalServices(Configuration.GetConnectionString("DefaultConnection"));
             services.RegisterDalServices(connectionString);
             services.RegisterBllServices();
             services.AddControllersWithViews();
