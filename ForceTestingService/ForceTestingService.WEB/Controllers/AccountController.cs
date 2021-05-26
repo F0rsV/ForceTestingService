@@ -25,8 +25,7 @@ namespace ForceTestingService.WEB.Controllers
         {
             var model = new RegisterViewModel()
             {
-                //AllRoles = _roleManager.Roles.ToList()
-                AllRoles = new List<string>() {"teacher", "student"}
+                AllRoles = _roleManager.Roles.ToList()
             };
 
 
@@ -59,8 +58,7 @@ namespace ForceTestingService.WEB.Controllers
                 }
             }
 
-            //model.AllRoles = _roleManager.Roles.ToList();
-            model.AllRoles = new List<string>() { "teacher", "student" };
+            model.AllRoles = _roleManager.Roles.ToList();
             return View(model);
         }
 

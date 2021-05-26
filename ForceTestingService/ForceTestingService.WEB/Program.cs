@@ -16,7 +16,6 @@ namespace ForceTestingService.WEB
         {
             var host = CreateHostBuilder(args).Build();
 
-            /*
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -32,8 +31,7 @@ namespace ForceTestingService.WEB
                     logger.LogError(ex, "An error occurred while seeding the database.");
                 }
             }
-            */
-
+            
             await host.RunAsync();
         }
 
