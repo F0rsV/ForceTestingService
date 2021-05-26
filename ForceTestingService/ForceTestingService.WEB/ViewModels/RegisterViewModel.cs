@@ -36,6 +36,7 @@ namespace ForceTestingService.WEB.ViewModels
         [Display(Name = "User Role")]
         public string UserRole { get; set; }
 
-        public List<IdentityRole<int>> AllRoles { get; set; }
+        //public List<IdentityRole<int>> AllRoles { get; set; }
+        public List<string> AllRoles { get; set; }
     }
 }

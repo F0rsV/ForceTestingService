@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ForceTestingService.Infrastructure.Entities;
 using ForceTestingService.WEB.ViewModels;
@@ -24,8 +25,10 @@ namespace ForceTestingService.WEB.Controllers
         {
             var model = new RegisterViewModel()
             {
-                AllRoles = _roleManager.Roles.ToList()
+                //AllRoles = _roleManager.Roles.ToList()
+                AllRoles = new List<string>() {"teacher", "student"}
             };
+
 
             return View(model);
         }
@@ -56,7 +59,8 @@ namespace ForceTestingService.WEB.Controllers
                 }
             }
 
-            model.AllRoles = _roleManager.Roles.ToList();
+            //model.AllRoles = _roleManager.Roles.ToList();
+            model.AllRoles = new List<string>() { "teacher", "student" };
             return View(model);
         }
 
