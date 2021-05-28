@@ -24,7 +24,7 @@
                 <input name="questions[@i].TaskInfo" type="hidden" value="@Model.Questions.ElementAt(i).TaskInfo" />
                 <input name="questions[@i].TopicName" type="hidden" value="@Model.Questions.ElementAt(i).TopicName" />
                 <input name="questions[@i].Id" type="hidden" value="@Model.Questions.ElementAt(i).Id" />
-
+                <br />
                 @Model.Questions.ElementAt(i).TaskInfo
                 <br />
 
@@ -34,7 +34,7 @@
                     <input name="questions[@i].Answers[@j].QuestionId" type="hidden" value="@Model.Questions.ElementAt(i).Answers.ElementAt(j).QuestionId" />
                     <input name="questions[@i].Answers[@j].Text" type="hidden" value="@Model.Questions.ElementAt(i).Answers.ElementAt(j).Text" />
 
-                    <input type="checkbox" name="questions[@i].Answers[@j].IsCorrect" value="true"/>
+                    <input type="checkbox" name="questions[@i].Answers[@j].IsCorrect" value="true" />
                     @Model.Questions.ElementAt(i).Answers.ElementAt(j).Text<br />
                 }
             }
