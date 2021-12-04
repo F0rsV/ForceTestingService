@@ -9,6 +9,7 @@ services:
         ports: 
             - "1433:1433"
     force-testing-service:
+        image: force-testing-service
         build:
             dockerfile: ForceTestingService.WEB/Dockerfile
             context: .
