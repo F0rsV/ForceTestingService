@@ -10,7 +10,7 @@ services:
             - "1433:1433"
     force-testing-service:
         build:
-            dockerfile: ForceTestingService.WEB/Dockerfile
+            dockerfile: Dockerfile
             context: .
         environment: 
             DbServer: tcp:ms-sql-server
